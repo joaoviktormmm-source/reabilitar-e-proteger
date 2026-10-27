@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reabilitar e Proteger | Direitos e Apoio à Pessoa com Deficiência</title>
+    <style>
+        /* ================= VARIÁVEIS DE COR E ESTILO ================= */
+        :root {
+            --azul-petroleo: #1A3C40; /* Cor principal empresarial */
+            --azul-claro: #2D6A6F;   /* Variação para hover e destaques */
+            --dourado: #D4AF37;      /* Cor de destaque (criatividade) */
+            --fundo-claro: #F8F9FA;  /* Fundo do site */
+            --texto-escuro: #2C3E50; /* Texto principal */
+            --branco: #FFFFFF;
+            --sombra: 0 8px 24px rgba(0,0,0,0.08); /* Sombra suave profissional */
+            --borda-arredondada: 12px;
+        }
+
+        /* ================= RESET E ESTILOS GERAIS ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--fundo-claro);
+            color: var(--texto-escuro);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* ================= NAVEGAÇÃO FIXA (ESTILO EMPRESARIAL) ================= */
+        nav {
+            background-color: var(--azul-petroleo);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            color: var(--branco);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo span { color: var(--dourado); }
+        .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+        .nav-links a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--dourado); }
+
+        /* ================= HEADER HERO (IMPACTO VISUAL) ================= */
+        header {
+            background: linear-gradient(135deg, var(--azul-petroleo) 0%, var(--azul-claro) 100%);
+            color: var(--branco);
+            text-align: center;
+            padding: 100px 20px 80px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        header h1 { font-size: 3rem; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.3rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
+
+        /* ================= CONTAINER PRINCIPAL ================= */
+        .container {
+            max-width: 1100px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        /* ================= CARDS DE CONTEÚDO ================= */
+        .card {
+            background-color: var(--branco);
+            border-radius: var(--borda-arredondada);
+            padding: 40px;
+            box-shadow: var(--sombra);
+            border-left: 6px solid var(--dourado); /* Detalhe criativo */
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        
+        .card h2 {
+            color: var(--azul-petroleo);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card h3 {
+            color: var(--azul-claro);
+            font-size: 1.3rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .card p { margin-bottom: 15px; }
+        .card ul { padding-left: 20px; margin-bottom: 15px; }
+        .card li { margin-bottom: 8px; }
+
+        /* ================= DESTAQUES E ALERTAS ================= */
+        .destaque-lei {
+            background-color: #F0F4F8;
+            border-left: 4px solid var(--azul-claro);
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .alerta-urgencia {
+            background-color: #FFF3CD;
+            border: 1px solid #FFECB5;
+            border-radius: var(--borda-arredondada);
+            padding: 25px;
+            margin-top: 20px;
+        }
+        .alerta-urgencia h3 { color: #856404; margin-top: 0; }
+
+        /* ================= BOTÕES DE AÇÃO ================= */
+        .btn {
+            display: inline-block;
+            background-color: var(--dourado);
+            color: var(--azul-petroleo);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 30px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn:hover { background-color: #C5A059; }
+
+        /* ================= RODAPÉ ================= */
+        footer {
+            background-color: var(--azul-petroleo);
+            color: var(--branco);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 4px solid var(--dourado);
+        }
+        footer p { opacity: 0.7; font-size: 0.9rem; }
+
+        /* ================= RESPONSIVIDADE ================= */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Em um projeto real, aqui entraria um menu hambúrguer */
+            .card { padding: 25px; }
+            .container { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Reabilitar <span>&</span> Proteger</div>
+            <ul class="nav-links">
+                <li><a href="#lbi">LBI</a></li>
+                <li><a href="#beneficios">Benefícios</a></li>
+                <li><a href="#direitos">Direitos</a></li>
+                <li><a href="#ajuda">Rede de Apoio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CABEÇALHO PRINCIPAL -->
+    <header>
+        <h1>Reabilitar e Proteger</h1>
+        <p>Informação, Direitos e Autonomia para Pessoas com Deficiência. Um portal para transformar a reabilitação em cidadania.</p>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+
+        <!-- SEÇÃO 1: LBI -->
+        <section class="card" id="lbi">
+            <h2>Lei Brasileira de Inclusão (LBI)</h2>
+            <p>A Lei nº 13.146/2015, conhecida como Estatuto da Pessoa com Deficiência, é um marco legal que garante os direitos fundamentais e a inclusão social de pessoas com deficiência em todas as áreas da vida[reference:0][reference:1].</p>
+            
+            <div class="destaque-lei">
+                <strong>O que a LBI garante?</strong> A Lei reforça princípios da Convenção e estabelece diretrizes para saúde, sexualidade, maternidade e paternidade, alimentação, habitação, educação, profissionalização, trabalho, previdência, habilitação e reabilitação, transporte, acessibilidade, cultura, esporte e lazer[reference:2].
+            </div>
+
+            <h3>Principais Pilares da Lei</h3>
+            <ul>
+                <li><strong>Acessibilidade:</strong> Garantia de acesso a edificações, espaços públicos, transportes, comunicações e serviços[reference:3].</li>
+                <li><strong>Tecnologia Assistiva:</strong> Direito a ajudas técnicas que promovam a autonomia[reference:4].</li>
+                <li><strong>Adaptações Razoáveis:</strong> Ajustes necessários para garantir a igualdade de oportunidades[reference:5].</li>
+                <li><strong>Direito à Moradia:</strong> Inclui a moradia para a vida independente[reference:6].</li>
+                <li><strong>Proteção contra a Violência:</strong> A LBI coíbe a exploração, violência, tortura, crueldade, opressão e tratamento desumano ou degradante.</li>
+            </ul>
+        </section>
+
+        <!-- SEÇÃO 2: BENEFÍCIOS -->
+        <section class="card" id="beneficios">
+            <h2>Benefícios e Direitos Sociais</h2>
+            
+            <h3>Benefício de Prestação Continuada (BPC)</h3>
+            <p>O BPC é um benefício assistencial pago pelo INSS no valor de um salário mínimo mensal. Ele é destinado a pessoas com deficiência (de qualquer idade) e idosos (65 anos ou mais) que comprovem não possuir meios de prover o próprio sustento nem de tê-lo provido por sua família[reference:8][reference:9].</p>
+            <ul>
+                <li><strong>Critério de renda:</strong> A renda mensal por pessoa da família deve ser menor que 1/4 do salário mínimo[reference:10].</li>
+                <li><strong>Requisito principal:</strong> Comprovar impedimento de longo prazo (mínimo de 2 anos) de natureza física, mental, intelectual ou sensorial[reference:11].</li>
+                <li><strong>Valor em 2026:</strong> Corresponde a um salário mínimo nacional (R$ 1.621,00), sem direito a 13º salário[reference:12].</li>
+            </ul>
+
+            <h3>Passe Livre Interestadual</h3>
+            <p>Garante a gratuidade no transporte coletivo interestadual (ônibus, barca ou trem) para pessoas com deficiência comprovadamente carentes, conforme a Lei nº 8.899/1994[reference:13].</p>
+            <ul>
+                <li><strong>Quem tem direito:</strong> Pessoa com deficiência e hipossuficiência financeira (renda familiar per capita de até 1 salário mínimo)[reference:14].</li>
+                <li><strong>Como solicitar:</strong> Pode ser feito de forma digital pelo sistema Passe Livre da ANTT[reference:15].</li>
+                <li><strong>Acompanhante:</strong> O benefício também garante gratuidade para o acompanhante, se necessário, mediante registro médico[reference:16].</li>
+            </ul>
+
+            <h3>Isenções para Compra de Carro PCD</h3>
+            <p>Pessoas com deficiência física, visual, auditiva, mental severa ou profunda, e com transtorno do espectro autista têm direito a isenções fiscais na compra de automóvel[reference:17].</p>
+            <ul>
+                <li><strong>IPI:</strong> Isenção para veículos novos de até R$ 200 mil[reference:18].</li>
+                <li><strong>ICMS:</strong> Isenção para veículos novos de até R$ 120 mil, limitada ao valor de R$ 70 mil na maioria dos estados[reference:19].</li>
+                <li><strong>IPVA:</strong> A isenção depende da legislação de cada estado[reference:20].</li>
+            </ul>
+        </section>
+
+        <!-- SEÇÃO 3: DIREITOS NA PRÁTICA -->
+        <section class="card" id="direitos">
+            <h2>Seus Direitos na Prática</h2>
+            <p>A lei garante, mas o dia a dia exige que você saiba como exercer seus direitos. Aqui estão alguns pontos essenciais:</p>
+            <ul>
+                <li><strong>Atendimento Prioritário:</strong> Em serviços públicos e privados, você tem direito a atendimento preferencial.</li>
+                <li><strong>Ambiente de Trabalho:</strong> Empregadores devem garantir condições de acessibilidade e adaptações razoáveis. A discriminação contra pessoas com deficiência no trabalho é crime[reference:22].</li>
+                <li><strong>Educação Inclusiva:</strong> Direito a um sistema educacional inclusivo em todos os níveis de ensino[reference:23].</li>
+                <li><strong>Saúde e Reabilitação:</strong> A LBI assegura o direito à habilitação e reabilitação, visando o desenvolvimento de habilidades e a inclusão social[reference:24].</li>
+            </ul>
+        </section>
+
+        <!-- SEÇÃO 4: REDE DE APOIO E DENÚNCIA -->
+        <section class="card" id="ajuda">
+            <h2>Rede de Apoio e Denúncia</h2>
+            <p>Se você está passando por uma situação de violência, negligência ou discriminação, não se cale. Existe uma rede de proteção pronta para acolher e ajudar.</p>
+
+            <div class="alerta-urgencia">
+                <h3>Canais Nacionais de Denúncia (Gratuitos e Anônimos)</h3>
+                <p><strong>Disque 100:</strong> Direitos Humanos (violência contra pessoas com deficiência).</p>
+                <p><strong>Disque 180:</strong> Central de Atendimento à Mulher (violência contra a mulher com deficiência).</p>
+                <p><strong>190:</strong> Polícia Militar (emergências e risco imediato).</p>
+                <a href="tel:100" class="btn">Ligar para o Disque 100</a>
+            </div>
+
+            <h3>Onde Procurar Ajuda em Palmas - TO</h3>
+            <ul>
+                <li><strong>CREAS (Centro de Referência Especializado de Assistência Social):</strong> Atende pessoas com deficiência, crianças, adolescentes, mulheres e idosos em situação de violência, negligência, abandono ou discriminação. O CREAS II atende a região sul de Palmas (Taquaralto, Taquaruçu, Buritirana, Taquari, Aurenys)[reference:25][reference:26].</li>
+                <li><strong>CRAS (Centro de Referência de Assistência Social):</strong> Oferece apoio social e psicológico.</li>
+                <li><strong>Serviço Social do CER:</strong> A equipe do Centro Estadual de Reabilitação está pronta para acolher, orientar e fazer os encaminhamentos necessários à rede de proteção.</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p><strong>Projeto de Extensão Universitária: Reabilitar e Proteger</strong></p>
+        <p>Curso de Psicologia - Centro Universitário Católica do Tocantins (UniCatólica)</p>
+        <p>&copy; 2026 - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
